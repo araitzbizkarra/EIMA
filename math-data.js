@@ -1,0 +1,5 @@
+AZ.places.find(p=>p.id==='zumaia').title='Pasabidea, argia eta kodea';
+AZ.places.find(p=>p.id==='anana').title='Gaueko erakusketa';
+AZ.places.find(p=>p.id==='anana').theme='Geometria, ibilbideak eta baliabideen antolaketa';
+AZ.cases={};
+for(const id of ['zumaia','anana']){AZ.cases[id]={};for(const grade of AZMath.grades){const tasks=[0,1,2].map(i=>AZMath.get(id,grade,i));AZ.cases[id][grade]={intro:id==='zumaia'?'Lotu bi ertzak, berreskuratu argiaren norabidea eta ireki patroiaren atea. Zure erabakiek aldatuko dute agertokia.':'Antolatu larraina, aukeratu gurdiaren ibilbidea eta banatu zama. Gaueko erakusketa zure planen zain dago.',data:tasks[0].rules,questions:tasks.map(q=>({title:q.title,prompt:q.goal})),codes:['1.2','7.1','8.1'],transfer:id==='zumaia'?'Aukeratu erronka bat. Aldatu piezen prezioa, distantzia edo hazkunde-araua. Aurreikusi nola aldatuko den erabakia, egin kalkulua eta egiaztatu.':'Aukeratu erronka bat. Aldatu hesiaren muga, bide-zati bat edo gurdiaren edukiera. Aurreikusi beste soluzio bat eta egiaztatu bi baldintza gutxienez.'};}}
